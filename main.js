@@ -14,9 +14,9 @@ modalCloseBtn.addEventListener('click', modalCloseFunc);
 const notificationToast = document.querySelector('[data-toast]');
 const toastCloseBtn = document.querySelector('[data-toast-close]');
 
-// toastCloseBtn.addEventListener('click', function() {
-//     notificationToast.classList.add('closed');
-// })
+toastCloseBtn.addEventListener('click', function() {
+    notificationToast.classList.add('closed');
+})
 
 //Closing or Opening Mobile Menu 
 const mobileMenuOpenBtn = document.querySelectorAll('[data-mobile-menu-open-btn]');
