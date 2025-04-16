@@ -241,6 +241,9 @@ input {
   border: 1px solid #ff416c;
   color: #ff416c;
 }
+.or {
+    display: none;
+}
 /* phone */
 /* 💡 الجزء الأهم: تنسيق الهاتف */
 @media (max-width: 767px) {
@@ -314,4 +317,7 @@ input {
         height: 40px;
         width: 40px;
       }
+      .or {
+        display: block;
+    }
   }
