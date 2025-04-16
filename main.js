@@ -1,3 +1,9 @@
+// open login page
+function Subscribe() {
+    window.location.href = "login-page.html";
+}
+
+
 'use strict';
 
 const modal = document.querySelector('[data-modal');
