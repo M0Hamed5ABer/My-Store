@@ -46,6 +46,27 @@
       </div>
     </div>
 
+    <a href="Prodact-page.html" class="notification-toast" data-toast>
+      <button class="toast-close-btn" data-toast-close>
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+
+      <div class="toast-banner">
+        <img
+          src="Images/jewellery-1.jpg"
+          alt="Ocean Golden Tear Earrings"
+          width="80"
+          height="70"
+        />
+      </div>
+
+      <div class="toast-detail">
+        <p class="toast-message">Someone just bought this item</p>
+        <p class="toast-title">Ocean Golden Drop Earrings</p>
+        <p class="toast-meta"><time datetime="PT2M">2 Minutes</time> ago</p>
+      </div>
+    </a>
+
     <header>
       <div class="header-top">
         <div class="container">
@@ -488,7 +509,6 @@
         </div>
       </nav>
     </header>
-
     <main class="pages">
       <section class="product-page-info">
         <div class="images">
@@ -538,9 +558,9 @@
             </select>
           </div>
 
-          <div class="action-btn">
+          <div class="action-btn-page">
             <button type="button">Buy Now</button>
-            <button type="button" class="btn-newsletter">Add to Cart</button>
+            <button type="button">Add to Cart</button>
           </div>
         </div>
       </section>
@@ -942,11 +962,17 @@
           </ul>
         </div>
         <div class="customer-reviews">
-          <div class="card"></div>
+          <div class="card">
+            <h3>John Doe</h3>
+            <p>Great product! Very comfortable and high quality material.</p>
+          </div>
+          <div class="card">
+            <h3>Jane Smith</h3>
+            <p>Perfect fit for my baby. I highly recommend it!</p>
+          </div>
         </div>
       </section>
     </main>
-
     <footer>
       <div class="footer-category">
         <div class="container">
@@ -1177,8 +1203,6 @@
         </div>
       </div>
     </footer>
-
-    <script src="main.js" defer></script>
     <script>
       // pages
       document.addEventListener("DOMContentLoaded", function () {
@@ -1186,12 +1210,17 @@
         const thumbnails = document.querySelectorAll(".small-images img");
 
         thumbnails.forEach(function (thumb) {
+          thumb.addEventListener("click", function () {
+            mainImage.src = this.src;
+          });
           thumb.addEventListener("mouseenter", function () {
             mainImage.src = this.src;
           });
         });
       });
     </script>
+
+    <script src="main.js" defer></script>
 
     <script
       type="module"
