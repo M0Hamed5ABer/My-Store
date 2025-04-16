@@ -1,4 +1,3 @@
-let storedData = JSON.parse(localStorage.getItem("user_info"));
 
 // open login page
 function Subscribe() {
@@ -23,6 +22,7 @@ const modalCloseFunc = function () {
 let checkInterval;
 
 function checkUserData() {
+  let storedData = JSON.parse(localStorage.getItem("user_info"));
   if (storedData && storedData.email && storedData.password) {
     // البيانات موجودة -> اغلق المودال وأوقف التكرار
     modal.classList.add("closed");
@@ -105,3 +105,4 @@ for (let i = 0; i < accordion.length; i++) {
     this.classList.toggle("active");
   });
 }
+

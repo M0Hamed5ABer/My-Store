@@ -492,16 +492,17 @@
     <main class="pages">
       <section class="product-page-info">
         <div class="images">
-          <div class="small-images">
-            <img src="Images/1.jpg" alt="image" />
-            <img src="Images/2.jpg" alt="image" />
-            <img src="Images/3.jpg" alt="image" />
-            <img src="Images/4.jpg" alt="image" />
-          </div>
           <div class="main-img">
-            <img src="Images/2.jpg" alt="image" />
+            <img id="mainImage" src="Images/2.jpg" alt="Product Image" />
+          </div>
+          <div class="small-images">
+            <img src="Images/1.jpg" alt="Thumbnail 1" />
+            <img src="Images/2.jpg" alt="Thumbnail 2" />
+            <img src="Images/3.jpg" alt="Thumbnail 3" />
+            <img src="Images/4.jpg" alt="Thumbnail 4" />
           </div>
         </div>
+
         <div class="data">
           <h2>
             Unisex Baby Nas Trends Short Sleeve Bodysuits For Unisex - Shapewear
@@ -509,7 +510,8 @@
           </h2>
           <h4>About this item:</h4>
           <p>Comfortable Bodysuit for unisex baby High Quality Material</p>
-          <h3><span>Price: </span> 199 <span>EGP</span></h3>
+          <h3><span>Price:</span> 199 <span>EGP</span></h3>
+
           <div class="showcase-rating">
             <ion-icon name="star"></ion-icon>
             <ion-icon name="star"></ion-icon>
@@ -518,24 +520,27 @@
             <ion-icon name="star"></ion-icon>
             <a href="#">441 Reviews</a>
           </div>
+
           <div class="option">
             <p>Options</p>
             <select>
-              <option value="eur">Color</option>
-              <option value="eur">Green</option>
-              <option value="usd">Red</option>
-              <option value="eur">Yellow</option>
+              <option disabled selected>Choose Color</option>
+              <option value="green">Green</option>
+              <option value="red">Red</option>
+              <option value="yellow">Yellow</option>
             </select>
+
             <select>
-              <option value="eur">Size</option>
-              <option value="eur">XL</option>
-              <option value="usd">XXL</option>
-              <option value="eur">Elephant</option>
+              <option disabled selected>Choose Size</option>
+              <option value="xl">XL</option>
+              <option value="xxl">XXL</option>
+              <option value="elephant">Elephant</option>
             </select>
           </div>
+
           <div class="action-btn">
-            <button>By Now</button>
-            <button class=".btn-newsletter">Add to Cart</button>
+            <button type="button">Buy Now</button>
+            <button type="button" class="btn-newsletter">Add to Cart</button>
           </div>
         </div>
       </section>
@@ -1173,7 +1178,20 @@
       </div>
     </footer>
 
-    <script src="main.js"></script>
+    <script src="main.js" defer></script>
+    <script>
+      // pages
+      document.addEventListener("DOMContentLoaded", function () {
+        const mainImage = document.getElementById("mainImage");
+        const thumbnails = document.querySelectorAll(".small-images img");
+
+        thumbnails.forEach(function (thumb) {
+          thumb.addEventListener("mouseenter", function () {
+            mainImage.src = this.src;
+          });
+        });
+      });
+    </script>
 
     <script
       type="module"
