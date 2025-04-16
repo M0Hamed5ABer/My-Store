@@ -3,15 +3,32 @@ function Subscribe() {
     window.location.href = "login-page.html";
 }
 
-
+//Close modle
+// check from data
+// user_info is database name
 'use strict';
 
-const modal = document.querySelector('[data-modal');
-const modalCloseBtn = document.querySelector('[data-modal-close');
-const modalCloseOverlay = document.querySelector('[data-modal-overlay');
+const modal = document.querySelector('[data-modal]');
+const modalCloseBtn = document.querySelector('[data-modal-close]');
+const modalCloseOverlay = document.querySelector('[data-modal-overlay]');
 
-const modalCloseFunc = function () { modal.classList.add('closed') }
+// وظيفة إغلاق المودال
+const modalCloseFunc = function () { 
+  modal.classList.add('closed');
+};
 
+// تحقق من وجود بيانات مستخدم
+let storedData = JSON.parse(localStorage.getItem("user_info"));
+
+if (storedData && storedData.email && storedData.password) {
+  // المستخدم مسجل من قبل -> أغلق المودال
+  modal.classList.add('closed');
+} else {
+  // المستخدم غير مسجل -> اترك المودال مفتوح أو أظهر صفحة تسجيل الدخول
+  modal.classList.remove('closed');  // تأكد أن المودال ظاهر
+}
+
+// إغلاق المودال بالضغط على الزر أو الخلفية
 modalCloseOverlay.addEventListener('click', modalCloseFunc);
 modalCloseBtn.addEventListener('click', modalCloseFunc);
 
