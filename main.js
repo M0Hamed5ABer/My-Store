@@ -1,4 +1,3 @@
-
 // open login page
 function Subscribe() {
   window.location.href = "login-page.html";
@@ -53,13 +52,13 @@ toastCloseBtn.addEventListener("click", function () {
   notificationToast.classList.add("closed");
 });
 // data user or sign in
-function dataUser() {
-  if (storedData && storedData.email && storedData.password) {
-    window.location.href = "user-page.html";
-  } else {
-    window.location.href = "login-page.html";
-  }
-}
+// function dataUser() {
+//   if (storedData && storedData.email && storedData.password) {
+//     window.location.href = "user.html";
+//   } else {
+//     window.location.href = "login-page.html";
+//   }
+// }
 //Closing or Opening Mobile Menu
 const mobileMenuOpenBtn = document.querySelectorAll(
   "[data-mobile-menu-open-btn]"
@@ -106,3 +105,18 @@ for (let i = 0; i < accordion.length; i++) {
   });
 }
 
+
+// pages
+document.addEventListener("DOMContentLoaded", function () {
+  const mainImage = document.getElementById("mainImage");
+  const thumbnails = document.querySelectorAll(".small-images img");
+
+  thumbnails.forEach(function (thumb) {
+    thumb.addEventListener("click", function () {
+      mainImage.src = this.src;
+    });
+    thumb.addEventListener("mouseenter", function () {
+      mainImage.src = this.src;
+    });
+  });
+});
