@@ -120,3 +120,49 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+
+// categories
+const filterForm = document.getElementById("filterForm");
+const filterSelects = filterForm.querySelectorAll("select");
+const filterBtn = document.getElementById("filterBtn");
+
+filterSelects.forEach(select => {
+  select.addEventListener("change", () => {
+    filterBtn.style.display = "inline-block";
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
+// عمل صفحات مختلفة للمنتجات
+// البحث
+// اضافة عناصر للسلة وتزالتها
+// سلة مشتريات
+// التفضيلات
+// الملف الشخصي
+// إضافة عداد للمنتجات في الصفحة الرئيسية
+
+// // page 
+//   // نحدد عنصر العداد
+//   const countElement = document.querySelector('.action-btn .count');
+
+//   // نحدد كل أزرار الإضافة (لأن كل منتج ممكن يكون له زر مختلف)
+//   const addButtons = document.querySelectorAll('.btn-action');
+
+//   // نضيف مستمع الحدث لكل زر
+//   addButtons.forEach(button => {
+//     button.addEventListener('click', () => {
+//       // نحصل على الرقم الحالي ونزيده بواحد
+//       let currentCount = parseInt(countElement.textContent);
+//       countElement.textContent = currentCount + 1;
+//     });
+//   });
